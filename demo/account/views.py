@@ -7,5 +7,6 @@ from rest_framework.decorators import permission_classes
 from django_axios.socket import http
 
 @http(['GET'])
+@permission_classes([IsAuthenticated])
 def flutterwave_webhook(request, sio):
     return Response({ 'data': 'Fuck' })

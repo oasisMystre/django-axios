@@ -49,12 +49,25 @@ def event(signal: ModelSignal, sender: Model, serializer: Serializer = None):
     return _decorator
 
 
+def child_decorator(attrs: dict):
+    """
+        pass parent decorators and pass to offspring
+    """
+    def _decorator(callback):
+        for key in dict.keys(attrs):
+            setattr(callback, key, attrs[key])
+        
+        return callback
+
+    return _decorator
+
 def http(methods: List[str]):
     """
         register api_views
     """
     def _decorator(callback: Callable[[HttpRequest, Server], Response]):
         @api_view(methods)
+        @child_decorator(callback.__dict__)
         def on_request(request: HttpRequest):
             return callback(request, sio)
 
