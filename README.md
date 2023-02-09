@@ -1,7 +1,7 @@
 # Django Axios
 emit events from django views or django database changes via python-socketio 
 
-```python
+```shell
     pip install django-axios
 ```
 
