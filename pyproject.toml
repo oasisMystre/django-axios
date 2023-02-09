@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "django-axios"
+version = "0.1.0"
+description = "Send database update via socketio through signal with ease"
+authors = ["Oguntunde Caleb <usegong@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "django_axios"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

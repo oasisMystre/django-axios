@@ -1,0 +1,12 @@
+{
+    "main": "",
+    "scripts": {
+        "dev": "py demo/manage.py makemigrations && py demo/manage.py migrate && py demo/manage.py runserver"
+    },
+    "dependencies": {
+        "Django": "4.1.6",
+        "djangorestframework": "3.14.0",
+        "python-socketio": "5.7.2"
+    },
+    "ancestor": "bulk"
+}
