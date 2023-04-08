@@ -28,7 +28,7 @@ from django.db.models.signal import post_save
 
 from django_socket.socket import event
 
-@event(signal, sender, serializer)
+@event(post_save, sender=Model, serializer)
 def on_model_save(instance, serializer, socket, created):
     # your code
 ```
@@ -39,7 +39,7 @@ emit socketio event from api_view / http view
 ```python 
 from django_socket.socket import http
 
-@http(methods)
+@http(["GET"])
 def webhook(request, socket):
     # your code
 ```
